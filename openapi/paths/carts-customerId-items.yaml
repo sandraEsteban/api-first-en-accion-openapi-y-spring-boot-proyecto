@@ -22,7 +22,7 @@ get:
               $ref: ../components/schemas/Item.yaml
         application/json:
           schema:
-            type: arrayP
+            type: array
             items:
               $ref: ../components/schemas/Item.yaml
     404:
