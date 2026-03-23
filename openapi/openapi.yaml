@@ -116,3 +116,4 @@ components:
       bearerFormat: JWT
 security:
   - bearerAuth: []
+P

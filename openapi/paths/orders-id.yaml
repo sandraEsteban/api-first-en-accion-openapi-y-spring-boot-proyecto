@@ -17,10 +17,10 @@ get:
       content:
         application/xml:
           schema:
-            $ref: '#/components/schemas/Order'
+            $ref: ../components/schemas/Order.yaml
         application/json:
           schema:
-            $ref: '#/components/schemas/Order'
+            $ref: ../components/schemas/Order.yaml
     404:
       description: Order doesn't exist for given user.
       content: {}
