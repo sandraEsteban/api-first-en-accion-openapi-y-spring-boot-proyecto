@@ -1,0 +1,22 @@
+description: Items in shopping cart
+type: object
+properties:
+  id:
+    description: Item Identifier
+    type: string
+  name:
+    description: Item name
+    type: string
+  description:
+    description: Item description
+    type: string
+  imageUrl:
+    description: Item image URL
+    type: string
+  quantity:
+    description: The item quantity
+    type: integer
+    format: int32
+  unitPrice:
+    description: The item's price per unit
+    type: BigDecimal

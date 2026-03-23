@@ -1,0 +1,26 @@
+get:
+  tags:
+    - order
+  summary: Returns the order of given order ID
+  description: Returns orders of given order ID
+  operationId: getByOrderId
+  parameters:
+    - name: id
+      in: path
+      description: Order Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: If order exists.
+      content:
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Order'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Order'
+    404:
+      description: Order doesn't exist for given user.
+      content: {}

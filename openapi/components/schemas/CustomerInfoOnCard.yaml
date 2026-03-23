@@ -1,0 +1,11 @@
+description: Customer information required for payment processing
+type: object
+properties:
+  firstName:
+    description: Customer first name
+    type: string
+  lastName:
+    description: Customer last name
+    type: string
+xml:
+  name: CustomerInfoOnCard

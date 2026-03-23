@@ -1,0 +1,108 @@
+get:
+  tags:
+    - cart
+  summary: Returns the list of products in user's shopping cart
+  description: Returns the items in shopping cart of given customer
+  operationId: getCartItemsByCustomerId
+  parameters:
+    - name: customerId
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: successful operation
+      content:
+        application/xml:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Item'
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Item'
+    404:
+      description: Given customer ID doesn't exist
+      content: {}
+post:
+  tags:
+    - cart
+  summary: Adds an item in shopping cart
+  description: Adds an item to the shopping cart if it doesn't already exist, or increment quantity by the specified number of items if it does.
+  operationId: addCartItemsByCustomerId
+  parameters:
+    - name: customerId
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+  requestBody:
+    description: Item object
+    content:
+      application/xml:
+        schema:
+          $ref: ../components/schemas/Item.yaml
+      application/json:
+        schema:
+          $ref: ../components/schemas/Item.yaml
+  responses:
+    201:
+      description: Item added successfully
+      content:
+        application/xml:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Item.yaml
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Item.yaml
+    404:
+      description: Given customer ID doesn't exist
+      content: {}
+put:
+  tags:
+    - cart
+  summary: Replace/add an item in shopping cart
+  description: Adds an item to the shopping cart if it doesn't already exist, or replace with given item if it does.
+  operationId: addOrReplaceItemsByCustomerId
+  parameters:
+    - name: customerId
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+  requestBody:
+    description: Item object
+    content:
+      application/xml:
+        schema:
+          $ref: ../components/schemas/Item.yaml
+      application/json:
+        schema:
+          $ref: ../components/schemas/Item.yaml
+  responses:
+    201:
+      description: Item added successfully
+      content:
+        application/xml:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Item.yaml
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Item.yaml
+    404:
+      description: Given customer ID doesn't exist
+      content: {}

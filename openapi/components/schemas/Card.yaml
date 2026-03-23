@@ -1,0 +1,18 @@
+type: object
+properties:
+  id:
+    description: Order identifier
+    type: string
+  cardNumber:
+    description: Card Number
+    type: string
+  expires:
+    description: Expiration date
+    type: string
+  cvv:
+    description: CVV code
+    type: string
+  userId:
+    type: string
+xml:
+  name: Card

@@ -1,0 +1,44 @@
+get:
+  tags:
+    - card
+  summary: Returns all user's cards
+  description: Returns all user's cards, else empty collection
+  operationId: getAllCards
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Card.yaml
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Card.yaml
+post:
+  tags:
+    - card
+  summary: Creates a new user addresses
+  description: Creates a new user addresses. Does nothing if address already exists.
+  operationId: registerCard
+  requestBody:
+    content:
+      application/xml:
+        schema:
+          $ref: ../components/schemas/AddCardReq.yaml
+      application/json:
+        schema:
+          $ref: ../components/schemas/AddCardReq.yaml
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Card.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Card.yaml

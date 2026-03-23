@@ -1,0 +1,13 @@
+type: object
+properties:
+  id:
+    description: Order identifier
+    type: string
+  authorized:
+    description: Flag that specified whether payment is authorized or not
+    type: boolean
+  message:
+    description: Approval or rejection message
+    type: string
+xml:
+  name: Payment

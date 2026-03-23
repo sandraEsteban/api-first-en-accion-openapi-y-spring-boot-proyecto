@@ -1,0 +1,28 @@
+type: object
+properties:
+  id:
+    description: Order identifier
+    type: string
+  number:
+    description: house of flat number
+    type: string
+  residency:
+    description: Socieity or building name
+    type: string
+  street:
+    description: street name
+    type: string
+  city:
+    description: city name
+    type: string
+  state:
+    description: state name
+    type: string
+  country:
+    description: country name
+    type: string
+  pincode:
+    description: postal code
+    type: string
+xml:
+  name: Address

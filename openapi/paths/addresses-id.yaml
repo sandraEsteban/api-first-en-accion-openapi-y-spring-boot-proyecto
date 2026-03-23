@@ -1,0 +1,37 @@
+get:
+  tags:
+    - address
+  summary: Returns user's address
+  description: Returns user's address based on given address ID.
+  operationId: getAddressesById
+  parameters:
+    - name: id
+      in: path
+      description: address Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Address.yaml
+delete:
+  tags:
+    - address
+  summary: Deletes user's address
+  description: Deletes user's address based on given address ID.
+  operationId: deleteAddressesById
+  parameters:
+    - name: id
+      in: path
+      description: address Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    202:
+      description: Accepts the deletion request and perform deletion. If ID does not exist, does nothing.
+      content: {}          

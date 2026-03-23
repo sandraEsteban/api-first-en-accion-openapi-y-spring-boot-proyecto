@@ -1,0 +1,20 @@
+type: object
+properties:
+  orderId:
+    description: Order Identification
+    type: string
+  time:
+    description: Timestamp when this authorization was created
+    type: string
+    format: date-time
+  authorized:
+    description: Flag that specify whether the payment is authorized
+    type: boolean
+  message:
+    description: Approval or rejection message
+    type: string
+  error:
+    description: Processing error description, if any
+    type: string
+xml:
+  name: Authorization

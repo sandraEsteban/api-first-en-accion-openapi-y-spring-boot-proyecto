@@ -1,0 +1,40 @@
+description: Represents an order
+type: object
+properties:
+  id:
+    description: Order identifier
+    type: string
+  customer:
+    $ref: './User.yaml'
+  address:
+    $ref: './Address.yaml'
+  card:
+    $ref: './Card.yaml'
+  date:
+    description: Order's data and time details
+    type: string
+    format: date-time
+  items:
+    description: Collection of order items.
+    type: array
+    items:
+      $ref: './Item.yaml'
+  total:
+    description: Order total
+    type: string  # BigDecimal
+  payment:
+    $ref: './Payment.yaml'
+  shipment:
+    $ref: './Shipment.yaml'
+  status:
+    description: Order Status
+    type: string
+    enum:
+      - CREATED
+      - PAID
+      - SHIPPED
+      - PAYMENT_FAILED
+      - SHIPMENT_FAILED
+      - COMPLETED
+xml:
+  name: Order

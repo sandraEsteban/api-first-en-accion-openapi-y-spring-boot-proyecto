@@ -1,0 +1,8 @@
+allOf:
+  - $ref: './Address.yaml'
+  - type: object
+    properties:
+      userId:
+        type: string
+xml:
+  name: AddAddressReq

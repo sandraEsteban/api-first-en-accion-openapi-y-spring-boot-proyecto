@@ -1,0 +1,17 @@
+description: Contains the payment request information
+type: object
+properties:
+  orderId:
+    description: Order Identifier
+    type: string
+  customer:
+    $ref: './CustomerInfoOnCard.yaml'
+  address:
+    $ref: './Address.yaml'
+  card:
+    $ref: './Card.yaml'
+  amount:
+    description: Payment amount
+    type: BigDecimal
+xml:
+  name: PaymentReq

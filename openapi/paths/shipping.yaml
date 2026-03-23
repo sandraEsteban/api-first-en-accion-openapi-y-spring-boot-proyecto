@@ -1,0 +1,47 @@
+post:
+  tags:
+    - shipment
+  summary: Ship the specified shipping request
+  description: Ship the specified shipping request
+  operationId: shipOrder
+  requestBody:
+    content:
+      application/xml:
+        schema:
+          $ref: ../components/schemas/ShippingReq.yaml
+      application/json:
+        schema:
+          $ref: ../components/schemas/ShippingReq.yaml
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Authorization.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Authorization.yaml
+get:
+  tags:
+    - shipment
+  summary: Return the Shipment
+  description: Return the Shipment for the specified order
+  operationId: getShipmentByOrderId
+  parameters:
+    - name: orderId
+      in: query
+      description: Order Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Shipment.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Shipment.yaml

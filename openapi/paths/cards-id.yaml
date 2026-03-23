@@ -1,0 +1,40 @@
+get:
+  tags:
+    - card
+  summary: Returns user's card
+  description: Returns user's card based on given card ID.
+  operationId: getCardById
+  parameters:
+    - name: id
+      in: path
+      description: card Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Card.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Card.yaml
+delete:
+  tags:
+    - card
+  summary: Deletes card's address
+  description: Deletes card's address based on given card ID.
+  operationId: deleteCardById
+  parameters:
+    - name: id
+      in: path
+      description: card Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    202:
+      description: Accepts the deletion request and perform deletion. If ID does not exist, does nothing.
+      content: {}

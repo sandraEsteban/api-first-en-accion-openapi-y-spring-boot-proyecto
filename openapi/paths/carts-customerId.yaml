@@ -1,0 +1,45 @@
+get:
+  tags:
+    - cart
+  summary: Returns the shopping cart
+  description: Returns the shopping cart of given customer
+  operationId: getCartByCustomerId
+  parameters:
+    - name: customerId
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: successful operation
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Cart.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Cart.yaml
+    404:
+      description: Given customer ID doesn't exist
+      content: {}
+delete:
+  tags:
+    - cart
+  summary: Delete the shopping cart
+  description: Deletes the shopping cart of given customer
+  operationId: deleteCart
+  parameters:
+    - name: customerId
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    204:
+      description: successful operation
+    404:
+      description: Given customer ID doesn't exist
+      content: {}

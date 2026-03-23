@@ -1,0 +1,23 @@
+get:
+  tags:
+    - product
+  summary: Returns a product
+  description: Returns the product that matches the given product ID
+  operationId: getProduct
+  parameters:
+    - name: id
+      in: path
+      description: Product Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Product.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Product.yaml

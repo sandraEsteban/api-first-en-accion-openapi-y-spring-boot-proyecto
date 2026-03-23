@@ -1,0 +1,58 @@
+post:
+  tags:
+    - order
+  summary:  Creates a new order for the given order request
+  description: Creates a new order for the given order request.
+  operationId: addOrder
+  requestBody:
+    description: New Order Request object
+    content:
+      application/xml:
+        schema:
+          $ref: ../components/schemas/NewOrder.yaml
+      application/json:
+        schema:
+          $ref: ../components/schemas/NewOrder.yaml
+  responses:
+    201:
+      description: Order added successfully
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/NewOrder.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Order.yaml
+    406:
+      description: If payment is not authorized.
+      content: {}
+get:
+  tags:
+    - order
+  summary: Returns the orders of given user
+  description: Returns orders of given user
+  operationId: getOrdersByCustomerId
+  parameters:
+    - name: customerId
+      in: query
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: If order exists.
+      content:
+        application/xml:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Order.yaml
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Order.yaml
+    404:
+      description: Order doesn't exist for given user.
+      content: {}

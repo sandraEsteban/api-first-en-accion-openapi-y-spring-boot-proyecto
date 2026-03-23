@@ -1,0 +1,17 @@
+type: object
+properties:
+  id:
+    description: Shipment Identifier
+    type: string
+  carrier:
+    description: Shipping Carrier
+    type: string
+  trackingNumber:
+    description: Shipping Tracking Number
+    type: string
+  estDeliveryDate:
+    description: Estimated Delivery Date
+    type: string
+    format: date
+xml:
+  name: Shipment

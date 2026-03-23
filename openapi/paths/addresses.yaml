@@ -1,0 +1,44 @@
+get:
+  tags:
+    - address
+  summary: Returns all user's addresses
+  description: Returns all user's addresses, else empty collection
+  operationId: getAllAddresses
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Address.yaml
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Address.yaml
+post:
+  tags:
+    - address
+  summary: Creates a new user addresses
+  description: Creates a new user addresses. Does nothing if address already exists.
+  operationId: createAddress
+  requestBody:
+    content:
+      application/xml:
+        schema:
+          $ref: ../components/schemas/AddAddressReq.yaml
+      application/json:
+        schema:
+          $ref: ../components/schemas/AddAddressReq.yaml
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Address.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Address.yaml

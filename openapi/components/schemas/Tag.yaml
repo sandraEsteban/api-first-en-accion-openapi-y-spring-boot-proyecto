@@ -1,0 +1,9 @@
+description: Tag information
+type: object
+properties:
+  id:
+    description: Tag identifier
+    type: string
+  name:
+    description: Tag Name
+    type: string

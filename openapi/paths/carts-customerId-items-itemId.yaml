@@ -1,0 +1,54 @@
+get:
+  tags:
+    - cart
+  summary: Returns given item from user's shopping cart
+  description: Returns given item from shopping cart of given customer
+  operationId: getCartItemsByItemId
+  parameters:
+    - name: customerId
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+    - name: itemId
+      in: path
+      description: Item (product) Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: If item exists in cart
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Item.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Item.yaml
+    404:
+      description: Given item (product) ID doesn't exist
+      content: {}
+delete:
+  tags:
+    - cart
+  summary: Delete the item from shopping cart
+  description: Deletes the item from shopping cart of given customer
+  operationId: deleteItemFromCart
+  parameters:
+    - name: customerId
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+    - name: itemId
+      in: path
+      description: Item (product) Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    202:
+      description: Accepts the request, regardless of whether the specified item exists in the cart or not.

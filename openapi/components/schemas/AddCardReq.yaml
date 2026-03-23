@@ -1,0 +1,9 @@
+description: Request object for new card registration.
+allOf:
+  - $ref: './Card.yaml'
+  - type: object
+    properties:
+      userId:
+        type: string
+xml:
+  name: AddCardReq

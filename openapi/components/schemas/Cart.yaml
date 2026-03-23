@@ -1,0 +1,14 @@
+description: Shopping Cart of the user
+type: object
+properties:
+  id:
+    description: Cart Identifier
+    type: string
+  customerId:
+    description: Id of the customer who possesses the cart
+    type: string
+  items:
+    description: Collection of items in cart.
+    type: array
+    items:
+      $ref: './Item.yaml'

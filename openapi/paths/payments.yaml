@@ -1,0 +1,47 @@
+post:
+  tags:
+    - payment
+  summary: Authorize a payment request
+  description: Authorize a payment request.
+  operationId: authorize
+  requestBody:
+    content:
+      application/xml:
+        schema:
+          $ref: ../components/schemas/PaymentReq.yaml
+      application/json:
+        schema:
+          $ref: ../components/schemas/PaymentReq.yaml
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Authorization.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Authorization.yaml
+get:
+  tags:
+    - payment
+  summary: Returns the payment authorization
+  description: Return the payment authorization for the specified order
+  operationId: getOrdersPaymentAuthorization
+  parameters:
+    - name: orderId
+      in: query
+      description: Order Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Authorization.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Authorization.yaml

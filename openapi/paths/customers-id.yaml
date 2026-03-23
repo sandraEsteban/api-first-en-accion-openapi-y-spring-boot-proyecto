@@ -1,0 +1,40 @@
+get:
+  tags:
+    - customer
+  summary: Returns a customer
+  description: Returns a customers identifiable by given ID
+  operationId: getCustomerById
+  parameters:
+    - name: id
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/User.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/User.yaml
+delete:
+  tags:
+    - customer
+  summary: Deletes the customer
+  description: Deletes the customer identifiable by given ID
+  operationId: deleteCustomerById
+  parameters:
+    - name: id
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    202:
+      description: Request accepted, returns this status even if user does not exist
+      content: {}

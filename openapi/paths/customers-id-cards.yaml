@@ -1,0 +1,23 @@
+get:
+  tags:
+    - customer
+  summary: Returns all customer's cards
+  description: Returns all customer's cards based on given customer ID
+  operationId: getCardByCustomerId
+  parameters:
+    - name: id
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/Card.yaml
+        application/json:
+          schema:
+            $ref: ../components/schemas/Card.yaml

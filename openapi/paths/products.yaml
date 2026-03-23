@@ -1,0 +1,49 @@
+get:
+  tags:
+    - product
+  summary: Returns all the matched products
+  description: Returns the products that matches the given query criteria
+  operationId: queryProducts
+  parameters:
+    - name: tag
+      in: query
+      description: Product tag
+      required: false
+      schema:
+        type: string
+    - name: name
+      in: query
+      description: Product name
+      required: false
+      schema:
+        type: string
+    - name: page
+      in: query
+      description: Query page number
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 1
+    - name: size
+      in: query
+      description: Query page size
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 10
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Product.yaml
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Product.yaml

@@ -1,0 +1,14 @@
+description: Contains information required for Shipping request
+type: object
+properties:
+  orderId:
+    description: Order Identifier
+    type: string
+  address:
+    $ref: './Address.yaml'
+  itemCount:
+    description: The number of items in the order
+    type: integer
+    format: int32
+xml:
+  name: ShippingReq

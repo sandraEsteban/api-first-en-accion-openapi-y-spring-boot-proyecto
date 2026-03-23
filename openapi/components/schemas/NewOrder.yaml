@@ -1,0 +1,16 @@
+description: Contains the new order request information
+type: object
+properties:
+  customerId:
+    type: string
+  address:
+    $ref: './Address.yaml'
+  card:
+    $ref: './Card.yaml'
+  items:
+    description: Items in shopping cart
+    type: array
+    items:
+      $ref: './Item.yaml'
+xml:
+  name: NewOrder

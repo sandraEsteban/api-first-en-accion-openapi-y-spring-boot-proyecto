@@ -1,0 +1,27 @@
+get:
+  tags:
+    - customer
+  summary: Returns all customer's addresses
+  description: Returns all customer's addresses based on given customer ID
+  operationId: getAddressesByCustomerId
+  parameters:
+    - name: id
+      in: path
+      description: Customer Identifier
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Address.yaml
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/Address.yaml

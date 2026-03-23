@@ -1,0 +1,20 @@
+get:
+  tags:
+    - customer
+  summary: Returns all customers
+  description: Returns all customers, or empty collection if no use found
+  operationId: getAllCustomers
+  responses:
+    200:
+      description: For successful fetch.
+      content:
+        application/xml:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/User.yaml
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/User.yaml
