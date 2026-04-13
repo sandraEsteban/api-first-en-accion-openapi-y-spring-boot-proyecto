@@ -6,8 +6,9 @@ info:
 
 sourceDescriptions:
   - name: ecommerceApi
-    url: https://ecomm-pj-1--bc8940.preview.redocly.app/_mock/git-repository/openapi/openapi
+    url: /openapi/openapi
     type: openapi
+    x-serverUrl: https://wys-01knh5qh98h16xdnkvdfmhb7ex.wysiwyg.cloud.redocly.com/_mock/git-repository/openapi/openapi
 
 workflows:
   - workflowId: addresses-full-lifecycle
