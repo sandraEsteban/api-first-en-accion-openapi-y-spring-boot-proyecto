@@ -4,6 +4,7 @@ properties:
   id:
     description: Order identifier
     type: string
+    example: a7384042-e4aa-4c93-85ae-31a346dad704
   customer:
     $ref: './User.yaml'
   address:
@@ -14,6 +15,7 @@ properties:
     description: Order's data and time details
     type: string
     format: date-time
+    example: 2026-04-13T23:20:50.52Z
   items:
     description: Collection of order items.
     type: array
@@ -22,6 +24,7 @@ properties:
   total:
     description: Order total
     type: string  # BigDecimal
+    example: 38.14
   payment:
     $ref: './Payment.yaml'
   shipment:
@@ -36,5 +39,6 @@ properties:
       - PAYMENT_FAILED
       - SHIPMENT_FAILED
       - COMPLETED
+    example: CREATED
 xml:
   name: Order

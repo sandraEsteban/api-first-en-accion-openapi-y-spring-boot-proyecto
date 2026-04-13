@@ -15,7 +15,7 @@ properties:
     type: string
   price:
     description: Product price
-    type: BigDecimal
+    type: string #BigDecimal
   count:
     description: Product count
     type: integer

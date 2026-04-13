@@ -4,9 +4,11 @@ properties:
   id:
     description: Cart Identifier
     type: string
+    example: 618ffaff-cbcd-48d4-8848-a15601e6725b
   customerId:
     description: Id of the customer who possesses the cart
     type: string
+    example: 999-999-999-999
   items:
     description: Collection of items in cart.
     type: array

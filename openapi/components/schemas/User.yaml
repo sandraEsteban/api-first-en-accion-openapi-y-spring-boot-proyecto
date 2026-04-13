@@ -2,23 +2,33 @@ type: object
 properties:
   id:
     type: string
+    example: a1b9b31d-e73c-4112-af7c-b68530f38222
   username:
     type: string
+    example: scott
   firstName:
     type: string
+    example: Bruce
   lastName:
     type: string
+    example: Scott
   email:
     type: string
+    example: bruce@scott.db
   password:
     type: string
+    example: P@ssw0rd123!
   phone:
     type: string
+    example: "234234234"
   userStatus:
     type: string
+    example: ACTIVE
   addressId:
     type: string
+    example: a731fda1-aaad-42ea-bdbc-a27eeebe2cc0
   cardId:
     type: string
+    example: 618ffaff-cbcd-48d4-8848-a15601e6725b
 xml:
   name: User

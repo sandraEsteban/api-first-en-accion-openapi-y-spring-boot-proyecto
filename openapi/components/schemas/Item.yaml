@@ -4,19 +4,25 @@ properties:
   id:
     description: Item Identifier
     type: string
+    example: a7384042-e4aa-4c93-85ae-31a346dad704
   name:
     description: Item name
     type: string
+    example: Influence
   description:
     description: Item description
     type: string
+    example: Influence - Psychology of Persuasion. By Robert B. Cialdini Ph.D.
   imageUrl:
     description: Item image URL
     type: string
+    example: /images/Influence.jpeg
   quantity:
     description: The item quantity
     type: integer
     format: int32
+    example: 1
   unitPrice:
     description: The item's price per unit
-    type: BigDecimal
+    type: string #BigDecimal
+    example: "99.99"
