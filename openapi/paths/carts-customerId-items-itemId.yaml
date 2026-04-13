@@ -52,3 +52,5 @@ delete:
   responses:
     202:
       description: Accepts the request, regardless of whether the specified item exists in the cart or not.
+    404:
+      description: Item (product) or customer ID doesn't exist

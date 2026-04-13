@@ -25,3 +25,5 @@ get:
             type: array
             items:
               $ref: ../components/schemas/Address.yaml
+    404: 
+      description: Customer Identifier doesn't exist

@@ -21,3 +21,5 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/Card.yaml
+    404:
+      description: Customer Identifier doesn't exist

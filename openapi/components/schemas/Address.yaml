@@ -31,6 +31,6 @@ properties:
   pincode:
     description: postal code
     type: string
-    example: 75008
+    example: "75008"
 xml:
   name: Address

@@ -22,6 +22,8 @@ post:
         application/json:
           schema:
             $ref: ../components/schemas/Authorization.yaml
+    404:
+      description: Order identifier doesn't exist
 get:
   tags:
     - shipment
@@ -45,3 +47,5 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/Shipment.yaml
+    404:
+      description: Shipment identifier doesn't exist

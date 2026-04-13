@@ -21,3 +21,5 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/Product.yaml
+    404:
+      description: Product identifier doesn't exist

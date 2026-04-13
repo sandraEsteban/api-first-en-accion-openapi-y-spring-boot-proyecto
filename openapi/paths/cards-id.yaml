@@ -21,6 +21,8 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/Card.yaml
+    404:
+      description: Card identifier doesn't exist
 delete:
   tags:
     - card
@@ -38,3 +40,5 @@ delete:
     202:
       description: Accepts the deletion request and perform deletion. If ID does not exist, does nothing.
       content: {}
+    404:
+      description: Card identifier doesn't exist

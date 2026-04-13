@@ -18,6 +18,8 @@ get:
             type: array
             items:
               $ref: ../components/schemas/Card.yaml
+    400:
+      description: Bad Request
 post:
   tags:
     - card
@@ -42,3 +44,5 @@ post:
         application/json:
           schema:
             $ref: ../components/schemas/Card.yaml
+    404:
+      description: Order identifier doesn't exist

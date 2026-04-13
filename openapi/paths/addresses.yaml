@@ -18,6 +18,8 @@ get:
             type: array
             items:
               $ref: ../components/schemas/Address.yaml
+    400:
+      description: Bad request
 post:
   tags:
     - address
@@ -42,3 +44,6 @@ post:
         application/json:
           schema:
             $ref: ../components/schemas/Address.yaml
+    404:
+      description: User identifier doesn't exist
+    

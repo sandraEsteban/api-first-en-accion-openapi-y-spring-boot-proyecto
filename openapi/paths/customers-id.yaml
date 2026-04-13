@@ -21,6 +21,9 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/User.yaml
+    404:
+      description: Customer Identifier not found
+    
 delete:
   tags:
     - customer
@@ -38,3 +41,5 @@ delete:
     202:
       description: Request accepted, returns this status even if user does not exist
       content: {}
+    404:
+      description: Customer Identifier doesn't exist
