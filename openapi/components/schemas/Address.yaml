@@ -3,26 +3,34 @@ properties:
   id:
     description: Order identifier
     type: string
+    example: a731fda1-aaad-42ea-bdbc-a27eeebe2cc0
   number:
     description: house of flat number
     type: string
+    example: 9I-999
   residency:
     description: Socieity or building name
     type: string
+    example: Fraser Suites Le Claridge
   street:
     description: street name
     type: string
+    example: Champs-Elysees
   city:
     description: city name
     type: string
+    example: Paris
   state:
     description: state name
     type: string
+    example: Île-de-France
   country:
     description: country name
     type: string
+    example: France
   pincode:
     description: postal code
     type: string
+    example: 75008
 xml:
   name: Address

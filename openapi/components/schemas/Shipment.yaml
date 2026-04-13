@@ -3,15 +3,19 @@ properties:
   id:
     description: Shipment Identifier
     type: string
+    example: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
   carrier:
     description: Shipping Carrier
     type: string
+    example: "DHL"
   trackingNumber:
     description: Shipping Tracking Number
     type: string
+    example: "JD014600006542345678"
   estDeliveryDate:
     description: Estimated Delivery Date
     type: string
     format: date
+    example: "2026-04-20"
 xml:
   name: Shipment

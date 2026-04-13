@@ -3,16 +3,21 @@ properties:
   id:
     description: Order identifier
     type: string
+    example: 618ffaff-cbcd-48d4-8848-a15601e6725b
   cardNumber:
     description: Card Number
     type: string
+    example: 999-999-999-999
   expires:
     description: Expiration date
     type: string
+    example: 12/28
   cvv:
     description: CVV code
     type: string
+    example: "0000"
   userId:
     type: string
+    example: a1b9b31d-e73c-4112-af7c-b68530f38222
 xml:
   name: Card

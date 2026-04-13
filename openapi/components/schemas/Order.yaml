@@ -24,7 +24,7 @@ properties:
   total:
     description: Order total
     type: string  # BigDecimal
-    example: 38.14
+    example: "38.14"
   payment:
     $ref: './Payment.yaml'
   shipment:

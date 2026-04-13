@@ -3,11 +3,14 @@ properties:
   id:
     description: Order identifier
     type: string
+    example: 0a59ba9f-629e-4445-8129-b9bce1985d6a
   authorized:
     description: Flag that specified whether payment is authorized or not
     type: boolean
+    example: true
   message:
     description: Approval or rejection message
     type: string
+    example: Transaction Approval
 xml:
   name: Payment
