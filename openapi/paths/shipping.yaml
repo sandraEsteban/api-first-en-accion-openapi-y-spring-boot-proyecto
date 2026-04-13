@@ -27,7 +27,7 @@ post:
 get:
   tags:
     - shipment
-  summary: Return the Shipment
+  summary: Return the shipment
   description: Return the Shipment for the specified order
   operationId: getShipmentByOrderId
   parameters:
@@ -47,5 +47,5 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/Shipment.yaml
-    404:
+    400:
       description: Order identifier doesn't exist

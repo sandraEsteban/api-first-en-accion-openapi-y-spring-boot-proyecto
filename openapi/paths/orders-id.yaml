@@ -1,7 +1,7 @@
 get:
   tags:
     - order
-  summary: Returns the order of given order ID
+  summary: Returns the order of given order id
   description: Returns orders of given order ID
   operationId: getByOrderId
   parameters:

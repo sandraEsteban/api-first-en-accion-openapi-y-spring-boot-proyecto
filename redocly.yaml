@@ -7,9 +7,14 @@ extends:
 rules:
   scalar-property-missing-example: error
   no-unused-components: error
-  operation-operationId: error
+  rule/operation-summary-sentence-case: 
+    subject:
+      type: Operation
+      property: summary
+    message: "Operation summary must be sentence cased."
+    assertions:
+      pattern: /^[A-Z]+[^A-Z]+$/
   no-server-example.com: off
-
 openapi:
   htmlTemplate: ./docs/index.html
   theme:
