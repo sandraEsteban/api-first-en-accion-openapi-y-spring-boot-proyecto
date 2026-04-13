@@ -30,7 +30,7 @@ openapi:
       - lang: Python
 reunite:
   jobs:
-    - path: '/arazzo-jobs/ecommerce-flow.yaml'
+    - path: 'arazzo-jobs/ecommerce-flow.yaml'
       agent: respect
       trigger:
         event: build
