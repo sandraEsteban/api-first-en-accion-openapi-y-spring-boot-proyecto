@@ -6,7 +6,7 @@ info:
 
 sourceDescriptions:
   - name: ecommerceApi
-    url: https://github.com/sandraEsteban/api-first-en-accion-openapi-y-spring-boot-proyecto/blob/main/openapi/openapi.yaml
+    url: ../openapi/openapi.yaml
     type: openapi
 
 workflows:
@@ -18,10 +18,32 @@ workflows:
 
     steps:
 
-      # 1. CREATE ADDRESS
+      # 1. LOGIN (OBTENER TOKEN)
+      - stepId: login
+        operationId: getAccessToken # Ajusta este ID según tu openapi.yaml
+        source: ecommerceApi
+        requestBody:
+          contentType: application/json
+          payload:
+            username: "test_user"
+            password: "test_password"
+        successCriteria:
+          - condition: $statusCode == 200
+        outputs:
+          token: $response.body.accessToken
+
+      # 2. CREATE ADDRESS
       - stepId: create-address
         operationId: createAddress
         source: ecommerceApi
+
+        parameters:
+          - name: Authorization
+            in: header
+            value: $concat("Bearer ", $steps.login.outputs.token)
+          - name: Content-Type
+            in: header
+            value: "application/json"
 
         requestBody:
           contentType: application/json
@@ -39,18 +61,67 @@ workflows:
           - condition: $statusCode == 200
 
         outputs:
-          addresses: $response.body
+          address: $response.body
     
-      # 2. GET ADDRESS BY ID
+      # 3. GET ADDRESS BY ID
       - stepId: get-address
         operationId: getAddressById
         source: ecommerceApi
 
         parameters:
-          - name: 
+          - name: Authorization
+            in: header
+            value: $concat("Bearer ", $steps.login.outputs.token)
+          - name: addressId
             in: path
-            value: $steps.create-address.outputs.addresses.id
+            value: $steps.create-address.outputs.address.id
 
         successCriteria:
           - condition: $statusCode == 200
 
+      # 4. UPDATE ADDRESS
+      - stepId: update-address
+        operationId: updateAddress
+        source: ecommerceApi
+
+        parameters:
+          - name: Authorization
+            in: header
+            value: $concat("Bearer ", $steps.login.outputs.token)
+          - name: addressId
+            in: path
+            value: $steps.create-address.outputs.address.id
+          - name: Content-Type
+            in: header
+            value: "application/json"
+
+        requestBody:
+          contentType: application/json
+          payload:
+            number: "10-B" # Cambiamos el número para la prueba
+            residency: "Fraser Suites Le Claridge"
+            street: "Champs-Elysees"
+            city: "Paris"
+            state: "Île-de-France"
+            country: "France"
+            pincode: "75008"
+            userId: "a1b9b31d-e73c-4112-af7c-b68530f38222"
+
+        successCriteria:
+          - condition: $statusCode == 200
+
+      # 5. DELETE ADDRESS
+      - stepId: delete-address
+        operationId: deleteAddressById
+        source: ecommerceApi
+
+        parameters:
+          - name: Authorization
+            in: header
+            value: $concat("Bearer ", $steps.login.outputs.token)
+          - name: addressId
+            in: path
+            value: $steps.create-address.outputs.address.id
+
+        successCriteria:
+          - condition: $statusCode == 204
