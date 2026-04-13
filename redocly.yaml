@@ -34,8 +34,6 @@ reunite:
       agent: respect
       trigger:
         event: build
-      severity:
-        statusCodeCheck: off
-        successCriteriaCheck: warn
-        schemaCheck: warn
-        contentTypeCheck: error
+      inputs:
+        reportType: summary
+        email: 'sandra.esteban@nter.es'
