@@ -6,9 +6,8 @@ info:
 
 sourceDescriptions:
   - name: ecommerceApi
-    url: /openapi/openapi
+    url: openapi/openapi
     type: openapi
-    x-serverUrl: https://wys-01knh5qh98h16xdnkvdfmhb7ex.wysiwyg.cloud.redocly.com/_mock/git-repository/openapi/openapi
 
 workflows:
   - workflowId: addresses-full-lifecycle
@@ -50,7 +49,7 @@ workflows:
         parameters:
           - name: 
             in: path
-            value: "a731fda1-aaad-42ea-bdbc-a27eeebe2cc0"
+            value: $steps.create-address.outputs.addresses.id
 
         successCriteria:
           - condition: $statusCode == 200
