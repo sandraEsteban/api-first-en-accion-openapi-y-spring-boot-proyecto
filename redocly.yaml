@@ -33,8 +33,7 @@ reunite:
     - path: 'arazzo-jobs/ecommerce-flow.yaml'
       agent: respect
       trigger:
-        event: schedule
-        interval: 1m
+        event: build
       inputs:
         reportType: summary
         email: 'sandra.esteban@nter.es'
