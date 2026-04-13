@@ -4,6 +4,8 @@ properties:
   id:
     description: Tag identifier
     type: string
+    example: 00000000-b5c6-4896-987c-f30f3678f601
   name:
     description: Tag Name
     type: string
+    example: book

@@ -8,6 +8,7 @@
     "test": "redocly lint"
   },
   "devDependencies": {
-    "@redocly/cli": "^2.26.0"
+    "@redocly/cli": "^2.26.0",
+    "@stoplight/spectral-cli": "^6.15.0"
   }
 }

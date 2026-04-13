@@ -48,4 +48,4 @@ get:
           schema:
             $ref: ../components/schemas/Shipment.yaml
     404:
-      description: Shipment identifier doesn't exist
+      description: Order identifier doesn't exist

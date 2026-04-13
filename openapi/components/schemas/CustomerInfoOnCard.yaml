@@ -4,8 +4,10 @@ properties:
   firstName:
     description: Customer first name
     type: string
+    example: Bruce
   lastName:
     description: Customer last name
     type: string
+    example: Scott
 xml:
   name: CustomerInfoOnCard

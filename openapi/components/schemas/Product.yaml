@@ -4,22 +4,28 @@ properties:
   id:
     description: Product identifier
     type: string
+    example: 03fef6ac-1896-4ce8-bd69-b798f85c6e0b
   name:
     description: Product Name
     type: string
+    example: Influence
   description:
     description: Product's description
     type: string
+    example: Influence - Psychology of Persuasion. By Robert B. Cialdini Ph.D.
   imageUrl:
     description: Product image's URL
     type: string
+    example: /images/Influence.jpeg
   price:
     description: Product price
     type: string #BigDecimal
+    example: "99.99"
   count:
     description: Product count
     type: integer
     format: int32
+    example: 1
   tag:
     description: Tags associated with the product
     type: array

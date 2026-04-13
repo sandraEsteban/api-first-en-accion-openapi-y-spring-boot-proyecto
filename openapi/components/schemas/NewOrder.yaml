@@ -3,6 +3,7 @@ type: object
 properties:
   customerId:
     type: string
+    example: a1b9b31d-e73c-4112-af7c-b68530f38222
   address:
     $ref: './Address.yaml'
   card:

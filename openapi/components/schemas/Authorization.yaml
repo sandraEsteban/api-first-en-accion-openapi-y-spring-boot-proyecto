@@ -3,18 +3,23 @@ properties:
   orderId:
     description: Order Identification
     type: string
+    example: 0a59ba9f-629e-4445-8129-b9bce1985d6a
   time:
     description: Timestamp when this authorization was created
     type: string
     format: date-time
+    example: 2026-04-13T23:59:60Z
   authorized:
     description: Flag that specify whether the payment is authorized
     type: boolean
+    example: true
   message:
     description: Approval or rejection message
     type: string
+    example: Approved successfully
   error:
     description: Processing error description, if any
     type: string
+    example: Invalid input
 xml:
   name: Authorization

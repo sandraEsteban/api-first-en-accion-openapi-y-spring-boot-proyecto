@@ -5,7 +5,9 @@ apis:
 extends:
   - recommended
 rules:
+  scalar-property-missing-example: error
   no-unused-components: error
+  operation-operationId: error
   no-server-example.com: off
 
 openapi:

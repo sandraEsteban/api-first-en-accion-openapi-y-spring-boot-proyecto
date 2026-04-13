@@ -4,6 +4,7 @@ properties:
   orderId:
     description: Order Identifier
     type: string
+    example: 0a59ba9f-629e-4445-8129-b9bce1985d6a
   customer:
     $ref: './CustomerInfoOnCard.yaml'
   address:
@@ -13,5 +14,6 @@ properties:
   amount:
     description: Payment amount
     type: string #BigDecimal
+    example: "38.14"
 xml:
   name: PaymentReq
