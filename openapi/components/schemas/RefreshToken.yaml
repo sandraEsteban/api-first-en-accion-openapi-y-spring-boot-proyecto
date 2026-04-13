@@ -1,0 +1,6 @@
+description: Contains the refresh token
+type: object
+properties:
+  refreshToken:
+    description: Refresh Token
+    type: string
