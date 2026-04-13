@@ -6,7 +6,7 @@ info:
 
 sourceDescriptions:
   - name: ecommerceApi
-    url: openapi/openapi
+    url: ./openapi/openapi
     type: openapi
 
 workflows:
