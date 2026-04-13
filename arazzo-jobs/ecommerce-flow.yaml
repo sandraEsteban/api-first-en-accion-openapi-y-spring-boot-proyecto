@@ -6,7 +6,7 @@ info:
 
 sourceDescriptions:
   - name: ecommerceApi
-    url: ./openapi/openapi
+    url: https://github.com/sandraEsteban/api-first-en-accion-openapi-y-spring-boot-proyecto/blob/main/openapi/openapi.yaml
     type: openapi
 
 workflows:
