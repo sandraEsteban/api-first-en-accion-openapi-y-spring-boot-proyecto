@@ -1,127 +1,128 @@
-arazzo: 1.0.0
-info:
-  title: Ecommerce flow test
-  version: 1.0.0
-  description: A sample Arazzo workflow demonstrating API orchestration
+# arazzo: 1.0.0
+# info:
+#   title: Ecommerce flow test
+#   version: 1.0.0
+#   description: A sample Arazzo workflow demonstrating API orchestration
 
-sourceDescriptions:
-  - name: ecommerceApi
-    url: ../openapi/openapi.yaml
-    type: openapi
+# sourceDescriptions:
+#   - name: ecommerceApi
+#     url: ../openapi/openapi.yaml
+#     url: openapi/openapi.yaml
+#     type: openapi
 
-workflows:
-  - workflowId: addresses-full-lifecycle
-    summary: Full CRUD test for addresses
-    description: >
-      Validates creation, retrieval, update, and deletion of user addresses
-      using the ecommerce API.
+# workflows:
+#   - workflowId: addresses-full-lifecycle
+#     summary: Full CRUD test for addresses
+#     description: >
+#       Validates creation, retrieval, update, and deletion of user addresses
+#       using the ecommerce API.
 
-    steps:
+#     steps:
 
-      # 1. LOGIN (OBTENER TOKEN)
-      - stepId: login
-        operationId: getAccessToken # Ajusta este ID según tu openapi.yaml
-        source: ecommerceApi
-        requestBody:
-          contentType: application/json
-          payload:
-            username: "test_user"
-            password: "test_password"
-        successCriteria:
-          - condition: $statusCode == 200
-        outputs:
-          token: $response.body.accessToken
+#       # 1. LOGIN (OBTENER TOKEN)
+#       - stepId: login
+#         operationId: getAccessToken # Ajusta este ID según tu openapi.yaml
+#         source: ecommerceApi
+#         requestBody:
+#           contentType: application/json
+#           payload:
+#             username: "test_user"
+#             password: "test_password"
+#         successCriteria:
+#           - condition: $statusCode == 200
+#         outputs:
+#           token: $response.body.accessToken
 
-      # 2. CREATE ADDRESS
-      - stepId: create-address
-        operationId: createAddress
-        source: ecommerceApi
+#       # 2. CREATE ADDRESS
+#       - stepId: create-address
+#         operationId: createAddress
+#         source: ecommerceApi
 
-        parameters:
-          - name: Authorization
-            in: header
-            value: $concat("Bearer ", $steps.login.outputs.token)
-          - name: Content-Type
-            in: header
-            value: "application/json"
+#         parameters:
+#           - name: Authorization
+#             in: header
+#             value: $concat("Bearer ", $steps.login.outputs.token)
+#           - name: Content-Type
+#             in: header
+#             value: "application/json"
 
-        requestBody:
-          contentType: application/json
-          payload:
-            number: "9I-999"
-            residency: "Fraser Suites Le Claridge"
-            street: "Champs-Elysees"
-            city: "Paris"
-            state: "Île-de-France"
-            country: "France"
-            pincode: "75008"
-            userId: "a1b9b31d-e73c-4112-af7c-b68530f38222"
+#         requestBody:
+#           contentType: application/json
+#           payload:
+#             number: "9I-999"
+#             residency: "Fraser Suites Le Claridge"
+#             street: "Champs-Elysees"
+#             city: "Paris"
+#             state: "Île-de-France"
+#             country: "France"
+#             pincode: "75008"
+#             userId: "a1b9b31d-e73c-4112-af7c-b68530f38222"
 
-        successCriteria:
-          - condition: $statusCode == 200
+#         successCriteria:
+#           - condition: $statusCode == 200
 
-        outputs:
-          address: $response.body
+#         outputs:
+#           address: $response.body
     
-      # 3. GET ADDRESS BY ID
-      - stepId: get-address
-        operationId: getAddressById
-        source: ecommerceApi
+#       # 3. GET ADDRESS BY ID
+#       - stepId: get-address
+#         operationId: getAddressById
+#         source: ecommerceApi
 
-        parameters:
-          - name: Authorization
-            in: header
-            value: $concat("Bearer ", $steps.login.outputs.token)
-          - name: addressId
-            in: path
-            value: $steps.create-address.outputs.address.id
+#         parameters:
+#           - name: Authorization
+#             in: header
+#             value: $concat("Bearer ", $steps.login.outputs.token)
+#           - name: addressId
+#             in: path
+#             value: $steps.create-address.outputs.address.id
 
-        successCriteria:
-          - condition: $statusCode == 200
+#         successCriteria:
+#           - condition: $statusCode == 200
 
-      # 4. UPDATE ADDRESS
-      - stepId: update-address
-        operationId: updateAddress
-        source: ecommerceApi
+#       # 4. UPDATE ADDRESS
+#       - stepId: update-address
+#         operationId: updateAddress
+#         source: ecommerceApi
 
-        parameters:
-          - name: Authorization
-            in: header
-            value: $concat("Bearer ", $steps.login.outputs.token)
-          - name: addressId
-            in: path
-            value: $steps.create-address.outputs.address.id
-          - name: Content-Type
-            in: header
-            value: "application/json"
+#         parameters:
+#           - name: Authorization
+#             in: header
+#             value: $concat("Bearer ", $steps.login.outputs.token)
+#           - name: addressId
+#             in: path
+#             value: $steps.create-address.outputs.address.id
+#           - name: Content-Type
+#             in: header
+#             value: "application/json"
 
-        requestBody:
-          contentType: application/json
-          payload:
-            number: "10-B" # Cambiamos el número para la prueba
-            residency: "Fraser Suites Le Claridge"
-            street: "Champs-Elysees"
-            city: "Paris"
-            state: "Île-de-France"
-            country: "France"
-            pincode: "75008"
-            userId: "a1b9b31d-e73c-4112-af7c-b68530f38222"
+#         requestBody:
+#           contentType: application/json
+#           payload:
+#             number: "10-B" # Cambiamos el número para la prueba
+#             residency: "Fraser Suites Le Claridge"
+#             street: "Champs-Elysees"
+#             city: "Paris"
+#             state: "Île-de-France"
+#             country: "France"
+#             pincode: "75008"
+#             userId: "a1b9b31d-e73c-4112-af7c-b68530f38222"
 
-        successCriteria:
-          - condition: $statusCode == 200
+#         successCriteria:
+#           - condition: $statusCode == 200
 
-      # 5. DELETE ADDRESS
-      - stepId: delete-address
-        operationId: deleteAddressById
-        source: ecommerceApi
+#       # 5. DELETE ADDRESS
+#       - stepId: delete-address
+#         operationId: deleteAddressById
+#         source: ecommerceApi
 
-        parameters:
-          - name: Authorization
-            in: header
-            value: $concat("Bearer ", $steps.login.outputs.token)
-          - name: addressId
-            in: path
-            value: $steps.create-address.outputs.address.id
+#         parameters:
+#           - name: Authorization
+#             in: header
+#             value: $concat("Bearer ", $steps.login.outputs.token)
+#           - name: addressId
+#             in: path
+#             value: $steps.create-address.outputs.address.id
 
-        successCriteria:
-          - condition: $statusCode == 204
+#         successCriteria:
+#           - condition: $statusCode == 204

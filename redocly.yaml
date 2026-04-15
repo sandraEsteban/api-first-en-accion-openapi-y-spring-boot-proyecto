@@ -1,7 +1,9 @@
 # See https://redocly.com/docs/cli/configuration/ for more information.
 apis:
-  sample@v1:
-    root: openapi/openapi.yaml
+  public@v2:
+    root: ./openapi/openapi.yaml
+  internal@v1:
+    root: ./internal-openapi/openapi.yaml
 extends:
   - recommended
 rules:
@@ -15,9 +17,9 @@ rules:
     assertions:
       pattern: /^[A-Z]+[^A-Z]+$/
   no-server-example.com: off
-reunite:
-  jobs:
-    - path: 'arazzo-jobs/ecommerce-flow.yaml'
-      agent: respect
-      trigger:
-        event: build
+# reunite:
+#   jobs:
+#     - path: '/arazzo-jobs/ecommerce-flow.yaml'
+#       agent: respect
+#       trigger:
+#         event: build
