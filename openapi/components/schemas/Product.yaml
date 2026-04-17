@@ -19,8 +19,9 @@ properties:
     example: /images/Influence.jpeg
   price:
     description: Product price
-    type: string #BigDecimal
-    example: "99.99"
+    type: number
+    format: decimal
+    example: 99.99
   count:
     description: Product count
     type: integer

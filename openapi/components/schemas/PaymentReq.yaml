@@ -13,7 +13,8 @@ properties:
     $ref: './Card.yaml'
   amount:
     description: Payment amount
-    type: string #BigDecimal
-    example: "38.14"
+    type: number
+    format: decimal
+    example: 38.14
 xml:
   name: PaymentReq

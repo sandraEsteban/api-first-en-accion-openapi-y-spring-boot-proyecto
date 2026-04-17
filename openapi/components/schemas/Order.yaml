@@ -23,8 +23,9 @@ properties:
       $ref: './Item.yaml'
   total:
     description: Order total
-    type: string  # BigDecimal
-    example: "38.14"
+    type: number
+    format: decimal
+    example: 38.14
   payment:
     $ref: './Payment.yaml'
   shipment:

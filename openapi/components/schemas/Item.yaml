@@ -24,5 +24,6 @@ properties:
     example: 1
   unitPrice:
     description: The item's price per unit
-    type: string #BigDecimal
-    example: "99.99"
+    type: number
+    format: decimal
+    example: 99.99
