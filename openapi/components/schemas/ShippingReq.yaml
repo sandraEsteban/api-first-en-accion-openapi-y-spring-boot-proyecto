@@ -7,5 +7,10 @@ properties:
     example: 0a59ba9f-629e-4445-8129-b9bce1985d6a
   address:
     $ref: './Address.yaml'
+  itemCount:
+    description: The number of items in the order
+    type: integer
+    format: int32
+    example: 1
 xml:
   name: ShippingReq
