@@ -25,5 +25,5 @@ properties:
   unitPrice:
     description: The item's price per unit
     type: number
-    format: decimal
+    format: double
     example: 99.99
